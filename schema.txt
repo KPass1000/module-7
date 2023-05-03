@@ -1,0 +1,32 @@
+Cardholder
+-
+holder_id integer
+holder_name VARCHAR(255)
+card_holder INT PK
+
+Creditcard
+-
+card VARCHAR(20)
+cardholder_id INT PK FK >- Cardholder.holder_id
+
+
+Merchant
+-
+merchant_id INT PK
+merchant_name VARCHAR(255)
+merchant_category VARCHAR(255) FK >- MerchantCategory.category_id
+
+MerchantCategory
+-
+category_id INT PK
+category_name VARCHAR(255)
+
+Transaction
+-
+transaction_id INT
+    date TIMESTAMP
+    amount numeric,
+card VARCHAR(20) FK >- Creditcard.card
+merchant_id INT, FK >- Merchant.merchant_id
+    transaction_pkey PK,
+    
